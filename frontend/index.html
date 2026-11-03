@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CodeGuard AI — Security Intelligence</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">CG</span><div><b>CodeGuard</b><small>SECURITY INTELLIGENCE</small></div></div>
+    <nav><a class="active" href="#overview">◈ Overview</a><a href="#scanner">⌕ Scan project</a><a href="#findings">▤ Findings</a></nav>
+    <div class="side-note"><span class="pulse"></span> Scanner API online</div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">APPLICATION SECURITY / WORKSPACE</p><h1>Security overview</h1><p class="muted">Scan your codebase and understand its security posture.</p></div><span class="status">● SYSTEM OPERATIONAL</span></header>
+    <section class="metrics" id="overview">
+      <article class="metric"><span>Latest risk score</span><strong id="risk">—</strong><small id="risk-label">Run a scan to begin</small></article>
+      <article class="metric"><span>Files scanned</span><strong id="files">0</strong><small>Source files inspected</small></article>
+      <article class="metric"><span>Findings detected</span><strong id="total">0</strong><small>Across all severities</small></article>
+      <article class="metric"><span>High + critical</span><strong id="urgent">0</strong><small>Prioritize these issues</small></article>
+    </section>
+    <section class="panel scanner" id="scanner">
+      <div><p class="eyebrow">NEW SECURITY ASSESSMENT</p><h2>Scan a project</h2><p class="muted">Upload a ZIP containing source code. Files are inspected, never executed.</p></div>
+      <form id="scan-form"><label class="drop" for="zip"><span class="upload-icon">↑</span><b id="file-label">Choose a project ZIP</b><small>Maximum 15 MB · ZIP format</small><input id="zip" type="file" accept=".zip" required></label><button id="scan-btn">Run security scan <span>→</span></button><p id="message" role="status"></p></form>
+    </section>
+    <section class="panel" id="findings">
+      <div class="section-head"><div><p class="eyebrow">SECURITY ANALYSIS</p><h2>Vulnerability findings</h2></div><a id="report" class="download disabled" href="#">↓ Export JSON</a></div>
+      <div class="severity"><div><span class="dot critical"></span>Critical <b id="critical">0</b></div><div><span class="dot high"></span>High <b id="high">0</b></div><div><span class="dot medium"></span>Medium <b id="medium">0</b></div><div><span class="dot low"></span>Low <b id="low">0</b></div></div>
+      <div id="finding-list" class="finding-list empty">No scan results yet. Upload a project ZIP to begin.</div>
+      <p class="footnote">Detection uses transparent pattern rules and optional Bandit. Review findings manually; false positives and missed issues are possible.</p>
+    </section>
+    <footer>CODEGUARD AI <span>Built for secure software development</span></footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body></html>
